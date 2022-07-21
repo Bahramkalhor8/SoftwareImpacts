@@ -1,0 +1,5 @@
+SELECT top 20000 main_id, plx_value, rvz_redshift, teff
+FROM basic JOIN ident ON oid=ident.oidref
+LEFT JOIN mesFe_h ON oid=mesFe_h.oidref
+WHERE plx_value >350 
+GROUP BY  main_id, plx_value , rvz_redshift, teff

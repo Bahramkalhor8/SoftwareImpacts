@@ -1,0 +1,5 @@
+SELECT top 20000 main_id, rvz_redshift, teff
+FROM basic JOIN ident ON oid=ident.oidref
+LEFT JOIN mesFe_h ON oid=mesFe_h.oidref
+WHERE  rvz_redshift <0 and  teff>100
+GROUP BY  main_id , rvz_redshift, teff
